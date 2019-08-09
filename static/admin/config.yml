@@ -20,6 +20,45 @@ collections:
       - {label: "Featured Image", name: "featuredimage", widget: image}
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Tags", name: "tags", widget: "list"}
+    
+  - name: "artistas"
+    label: "Artistas"
+    folder: "src/pages/14bienal/artistas"
+    create: true
+    slug: "{{nome}}-{{pais}}-{{slug}}"
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "artista-post"}
+      - {label: "Nome", name: "nome", widget: "string"}
+      - {label: "País", name: "pais", widget: "string"}
+      - {label: "Bio", name: "bio", widget: "text"}
+      - {label: "Post de destaque", name: "postdedestaque", widget: "boolean"}
+      - {label: "Imagem de destaque", name: "imagemdedestaque", widget: image}
+      - {label: "Obras de destaque", name: "obrasdedestaque", widget: "object", fields:[{label: "Obra de destaque 1", name: "obradedestaque1", widget: image}, {label: "Obra de destaque 2", name: "obradedestaque2", widget: image}, {label: "Obra de destaque 3", name: "obradedestaque3", widget: image} ]}
+      - {label: "Tags", name: "tags", widget: "list"}
+   
+  - name: "curadores"
+    label: "Curadores"
+    folder: "src/pages/14bienal/curadores"
+    create: true
+    slug: "{{nome}}-{{pais}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "curador-post"}
+      - {label: "Nome", name: "nome", widget: "string"}
+      - {label: "País", name: "pais", widget: "string"}
+      - {label: "Bio", name: "bio", widget: "text"}
+      - {label: "Post de destaque", name: "postdedestaque", widget: "boolean"}
+      - {label: "Imagem de destaque", name: "imagemdedestaque", widget: image}
+
+  - name: "sede"
+    label: "Sede"
+    folder: "src/pages/14bienal/sedes"
+    create: true
+    slug: "{{nome}}-{{slug}}"
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "sede-post"}
+      - {label: "Nome", name: "nome", widget: "string"}
+      - {label: "Descrição", name: "descricao", widget: "text"}
+      - {label: "Imagem de destaque", name: "imagemdedestaque", widget: image}
 
   - name: "pages"
     label: "Pages"
