@@ -20,46 +20,6 @@ collections:
       - {label: "Featured Image", name: "featuredimage", widget: image}
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Tags", name: "tags", widget: "list"}
-    
-  - name: "artistas"
-    label: "Artistas"
-    folder: "src/pages/14bienal/artistas"
-    create: true
-    slug: "{{nome}}-{{pais}}-{{slug}}"
-    fields:
-      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "artista-post"}
-      - {label: "Nome", name: "nome", widget: "string"}
-      - {label: "País", name: "pais", widget: "string"}
-      - {label: "Bio", name: "bio", widget: "text"}
-      - {label: "Post de destaque", name: "postdedestaque", widget: "boolean"}
-      - {label: "Imagem de destaque", name: "imagemdedestaque", widget: image}
-      - {label: "Obras de destaque", name: "obrasdedestaque", widget: "object", fields:[{label: "Obra de destaque 1", name: "obradedestaque1", widget: image}, {label: "Obra de destaque 2", name: "obradedestaque2", widget: image}, {label: "Obra de destaque 3", name: "obradedestaque3", widget: image} ]}
-      - {label: "Tags", name: "tags", widget: "list"}
-   
-  - name: "curadores"
-    label: "Curadores"
-    folder: "src/pages/14bienal/curadores"
-    create: true
-    slug: "{{nome}}-{{pais}}-{{day}}-{{slug}}"
-    fields:
-      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "curador-post"}
-      - {label: "Nome", name: "nome", widget: "string"}
-      - {label: "País", name: "pais", widget: "string"}
-      - {label: "Bio", name: "bio", widget: "text"}
-      - {label: "Post de destaque", name: "postdedestaque", widget: "boolean"}
-      - {label: "Imagem de destaque", name: "imagemdedestaque", widget: image}
-
-  - name: "sede"
-    label: "Sede"
-    folder: "src/pages/14bienal/sedes"
-    create: true
-    slug: "{{nome}}-{{slug}}"
-    fields:
-      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "sede-post"}
-      - {label: "Nome", name: "nome", widget: "string"}
-      - {label: "Descrição", name: "descricao", widget: "text"}
-      - {label: "Imagem de destaque", name: "imagemdedestaque", widget: image}
-
   - name: "pages"
     label: "Pages"
     files:
@@ -97,3 +57,90 @@ collections:
           - {label: Testimonials, name: testimonials, widget: list, fields: [{label: Quote, name: quote, widget: string}, {label: Author, name: author, widget: string}]}
           - {label: Full_image, name: full_image, widget: image}
           - {label: Pricing, name: pricing, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: string}, {label: Plans, name: plans, widget: list, fields: [{label: Plan, name: plan, widget: string}, {label: Price, name: price, widget: string}, {label: Description, name: description, widget: string}, {label: Items, name: items, widget: list}]}]}
+  - name: "artistas"
+    label: "Artistas"
+    folder: "src/pages/artistas"
+    identifier_field: nome
+    create: true
+    slug: "{{nome}}-{{pais}}-{{slug}}"
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "artista-post"}
+      - {label: "Publish Date", name: "date", widget: "hidden"}
+      - {label: "Nome", name: "nome", widget: "string"}
+      - {label: "País", name: "pais", widget: "string"}
+      - {label: "Bio", name: "bio", widget: "text"}
+      - {label: "Post de destaque", name: "postdedestaque", widget: "boolean"}
+      - {label: "Imagem de destaque", name: "imagemdedestaque", widget: image}
+      - {label: "Obras de destaque", name: "obrasdedestaque", widget: "object", fields:[{label: "Obra de destaque 1", name: "obradedestaque1", widget: image}, {label: "Obra de destaque 2", name: "obradedestaque2", widget: image}, {label: "Obra de destaque 3", name: "obradedestaque3", widget: image} ]}
+      - {label: "Tags", name: "tags", widget: "list"}
+  - name: "curadores"
+    label: "Curadores"
+    folder: "src/pages/curadores"
+    create: true
+    slug: "{{nome}}-{{pais}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "curador-post"}
+      - {label: "Nome", name: "nome", widget: "string"}
+      - {label: "País", name: "pais", widget: "string"}
+      - {label: "Bio", name: "bio", widget: "text"}
+      - {label: "Post de destaque", name: "postdedestaque", widget: "boolean"}
+      - {label: "Imagem de destaque", name: "imagemdedestaque", widget: image}
+  - name: "sedes"
+    label: "Sedes"
+    folder: "src/pages/sedes"
+    create: true
+    slug: "{{nome}}-{{slug}}"
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "sede-post"}
+      - {label: "Nome", name: "nome", widget: "string"}
+      - {label: "Descrição", name: "descricao", widget: "text"}
+      - {label: "Imagem de destaque", name: "imagemdedestaque", widget: image}
+  - name: "news-fiquepordentro"
+    label: "News - Fique por dentro"
+    folder: "src/pages/noticias"
+    create: true
+    slug: "{{nome}}-{{slug}}"
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "fiquepordentro-post"}
+      - {label: "Imagem de destaque", name: "imagemdedestaque", widget: image}
+      - {label: "Título", name: "titulo", widget: "string"}
+      - {label: "Subtítulo", name: "subtitulo", widget: "string"}
+      - {label: "Autor", name: "autor", widget: "string"}
+      - {label: "Conteúdo", name: "content", widget: "object", fields:[{label: "Texto", name: "body", widget: "markdown"}, {label: "Serviço", name: "servico", widget: "object", fields:[{label: "Oquê", name: "oque", widget: "string"}, {label: "Quem", name: "quem", widget: "string"}, {label: "Quando", name: "quando", widget: "string"}, {label: "Onde", name: "onde", widget: "string"}, {label: "Como", name: "como", widget: "string"} ]} ]}
+  - name: "news-galeria"
+    label: "News - Galeria de Imagens"
+    folder: "src/pages/noticias"
+    create: true
+    slug: "{{nome}}-{{slug}}"
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "galeria-post"}
+      - {label: "Imagem de destaque", name: "imagemdedestaque", widget: image}
+      - {label: "Título", name: "titulo", widget: "string"}
+      - {label: "Subtítulo", name: "subtitulo", widget: "string"}
+      - {label: "Editor", name: "editor", widget: "string"}
+      - {label: "Fotos", name: "fotos", widget: "string"}
+      - {label: "Imagens", name: "imagens", widget: "list", field:{label: "image", name: "image", widget: "image"}}
+  - name: "news-entrevistas"
+    label: "News - Entrevistas"
+    folder: "src/pages/entrevistas"
+    create: true
+    slug: "{{nome}}-{{slug}}"
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "entrevista-post"}
+      - {label: "Imagem de destaque", name: "imagemdedestaque", widget: image}
+      - {label: "Título", name: "titulo", widget: "string"}
+      - {label: "Subtítulo", name: "subtitulo", widget: "string"}
+      - {label: "Autor", name: "autor", widget: "string"}
+      - {label: "Texto", name: "body", widget: "markdown"}
+  - name: "aberturas"
+    label: "Aberturas"
+    folder: "src/pages/aberturas"
+    create: true
+    slug: "{{nome}}-{{slug}}"
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "abertura-post"}
+      - {label: "Título", name: "titulo", widget: "string"}
+      - {label: "Subtítulo", name: "subtitulo", widget: "string"}
+      - {label: "Autor", name: "autor", widget: "string"}
+      - {label: "Conteúdo", name: "content", widget: "object", fields:[{label: "O quê", name: "oque", widget: "text"}, {label: "Quando", name: "quando", widget: "object", fields:[{label: "Data", name: "data", widget: "date"}, {label: "Hora", name: "hora", widget: "string"}] }, {label: "Onde", name: "onde", widget: "relation", collection: "sedes", searchFields: "name", valueField: "name",   displayFields: "name"} ]}
+
